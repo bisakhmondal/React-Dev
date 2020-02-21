@@ -1,20 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card';
-import {robots} from './robots';
 import 'tachyons';
 import * as serviceWorker from './serviceWorker';
-
+import App from './App'
 
 ReactDOM.render(
-        <div>
-        {/* {robots.forEach((i))} */}
-        <Card robo={robots[0]} />
-        <Card robo={robots[1]} />
-        <Card robo={robots[2]} />
-        <Card robo={robots[3]} />
-        </div>
+    <App />  
     ,
      document.getElementById('root'));
 

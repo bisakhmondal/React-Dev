@@ -8,6 +8,9 @@ const cardList=({robots})=>{
     const cardArray =robots.map((value,i)=>{
         return <Card key={i} robo={value} />
     })
+    if (cardArray.length===0){
+        return <h3 className='tc' style={{color:'white'}}>Oops No match Found!!</h3>
+    }
     return (
         <div>
             {cardArray}

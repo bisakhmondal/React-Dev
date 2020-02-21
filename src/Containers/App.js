@@ -1,9 +1,9 @@
 import React from 'react';
-import CardList from './stash/CardList';
+import CardList from '../Components/CardList';
 // import {robots} from './robots'; now we are fetching from directly server
-import Searchbox from './stash/Searchbox'
+import Searchbox from '../Components/Searchbox'
 import './App.css'
-import Scroll from './stash/Scroll'
+import Scroll from '../Components/Scroll'
 export default class  App extends React.Component{
     constructor(){
         super();
@@ -25,23 +25,18 @@ export default class  App extends React.Component{
         const filteredRobs= this.state.robots.filter(
             (robot)=> robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         );
-        if(this.state.robots.length<=0){
-            return(
-                <h1 className='tc f1'>Loading!!</h1>
-            )
-        }
-    return (
         
-        <div className='tc'>
-            <h1 className='tc f1 '> RoboFriends</h1>
-            <Searchbox onclicking={this.ChangeState} />
-            <Scroll>
-                <CardList robots={filteredRobs} /> 
-            </Scroll>
-           
-            {/* <h4>{this.state.searchfield}</h4> */}
-        </div>
-    );
-
+            return !this.state.robots.length
+                ?
+                    <h1 className='tc f1'>Loading!!</h1>
+                :
+        
+                    <div className='tc'>
+                        <h1 className='tc f1 '> RoboFriends</h1>
+                        <Searchbox onclicking={this.ChangeState} />
+                        <Scroll>
+                            <CardList robots={filteredRobs} /> 
+                        </Scroll>
+                    </div>
     }
 }

@@ -1,1 +1,4 @@
 export const ChangeSearchField= 'Search_Changed';
+export const CHANGE_REQUEST_PENDING='REQUEST_ROBOTS_PENDING' ;
+export const CHANGE_REQUEST_SUCCESS='REQUEST_ROBOTS_SUCCESS' ;
+export const CHANGE_REQUEST_FAILED='REQUEST_ROBOTS_FAILED' ;
